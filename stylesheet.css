@@ -70,9 +70,10 @@ a {
 
 a:focus,
 a:hover {
-  color: #f09228;
+  color: #c744ff;
   text-decoration: none;
 }
+
 
 body,
 td,
@@ -113,6 +114,18 @@ h2 {
   width: 160px;
   height: 160px;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1; /* Keeps the image on a lower layer than the text links if needed */
+}
+
+.one img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  display: block;
 }
 
 .two {
@@ -122,6 +135,11 @@ h2 {
   transition: opacity .2s ease-in-out;
   -moz-transition: opacity .2s ease-in-out;
   -webkit-transition: opacity .2s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
 }
 
 .fade {
@@ -131,7 +149,11 @@ h2 {
 }
 
 span.highlight {
-  background-color: #ffffd0;
+  background-color: #d4e8f9;
+}
+
+.highlight-blue {
+    background-color: #e6f3ff;
 }
 
 .colored-box {
@@ -143,19 +165,67 @@ span.highlight {
 
 /* Publication Badge (The blue block) */
 .pub-badge {
-    background-color: #4eb0da; /* The blue color from your screenshot */
-    color: white;
-    padding: 3px 8px;
-    border-radius: 4px;
-    display: inline-block;
-    font-weight: bold;
-    font-size: 11px;
-    margin-bottom: 8px;
+    background-color: #0077e6; /* Your vibrant blue */
+    color: white !important;   /* Keeps text white */
+    padding: 5px 0px;
+    border-radius: 6px;
+    display: block;
+    font-weight: 900;
+    font-size: 12px;
+    margin-bottom: 12px;
     text-align: center;
-    width: 144px; /* Matches the width of the image area minus padding */
+    width: 160px;
+    text-decoration: none !important;
+    box-shadow: 0 4px 8px rgba(0, 119, 230, 0.25);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer; /* Makes the hand icon appear */
 }
 
-/* Optional: Highlight class for the yellow background */
-.highlight-row {
-    background-color: #ffffd0;
+/* THE HOVER EFFECT FOR THE BLUE BADGE */
+.pub-badge:hover {
+    background-color: #0056b3; /* Becomes a darker blue */
+    box-shadow: 0 6px 15px rgba(0, 119, 230, 0.5); /* Stronger glow */
+    transform: translateY(-2px); /* Lifts the button up */
+    color: white !important; /* Ensures text STAYS white and doesn't turn purple */
 }
+
+/* Style for the Code/arXiv buttons */
+.paper-btn {
+    display: inline-block;
+    padding: 3px 12px;
+    background-color: rgba(0, 0, 0, 0.05); /* Translucent background */
+    border: 1px solid #333;
+    color: #000 !important; /* Black text by default */
+    text-decoration: none !important;
+    font-size: 11px;
+    font-weight: 700;
+    border-radius: 4px;
+    margin-top: 10px;
+    margin-right: 5px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.paper-btn:hover {
+    color: #6e44ff !important;        /* Becomes purple on hover */
+    border-color: #6e44ff;           /* Border also becomes purple */
+    background-color: rgba(110, 68, 255, 0.05); /* Light purple tint background */
+    transform: translateY(-1px);      /* Subtle "lift" effect */
+}
+
+.social-icon {
+  height: 22px;
+  width: auto;
+  vertical-align: middle;
+  margin: 0 8px;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+.social-icon:hover {
+  opacity: 1.0;
+}
+
