@@ -140,3 +140,22 @@ span.highlight {
     display: inline-block;
     border-radius: 10px;
 }
+
+/* Publication Badge (The blue block) */
+.pub-badge {
+    background-color: #4eb0da; /* The blue color from your screenshot */
+    color: white;
+    padding: 3px 8px;
+    border-radius: 4px;
+    display: inline-block;
+    font-weight: bold;
+    font-size: 11px;
+    margin-bottom: 8px;
+    text-align: center;
+    width: 144px; /* Matches the width of the image area minus padding */
+}
+
+/* Optional: Highlight class for the yellow background */
+.highlight-row {
+    background-color: #ffffd0;
+}
