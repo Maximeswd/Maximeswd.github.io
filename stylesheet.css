@@ -157,11 +157,22 @@ span.highlight {
 }
 
 .colored-box {
-    color: black;
     padding: 20px;
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 10px;
+    width: 130px; 
 }
+
+.colored-box h2 {
+    font-size: 16px; /* Slightly smaller to fit "Miscellanea" style */
+    font-weight: 600;
+    color: #444; /* Dark grey text for better contrast on pastels */
+    margin: 0;
+    text-transform: none; /* Keeps it professional */
+}
+
 
 /* Publication Badge (The blue block) */
 .pub-badge {
