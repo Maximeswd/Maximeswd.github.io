@@ -222,21 +222,24 @@ span.highlight {
 }
 
 .paper-btn:hover {
-    color: #6e44ff !important;        /* Becomes purple on hover */
-    border-color: #6e44ff;           /* Border also becomes purple */
-    background-color: rgba(110, 68, 255, 0.05); /* Light purple tint background */
-    transform: translateY(-1px);      /* Subtle "lift" effect */
+    color: #6e44ff !important;        
+    border-color: #6e44ff;           
+    background-color: rgba(110, 68, 255, 0.05);
+    transform: translateY(-1px);      
 }
 
 .social-icon {
-  height: 22px;
-  width: auto;
+  height: 32px;            
+  width: auto;             
   vertical-align: middle;
-  margin: 0 8px;
-  opacity: 0.7;
-  transition: opacity 0.2s;
+  margin: 0 12px;         
+  opacity: 0.3;            
+  transition: opacity 0.3s ease; 
+  filter: grayscale(100%); 
 }
+
 .social-icon:hover {
-  opacity: 1.0;
+  opacity: 1.0;            
+  filter: grayscale(0%);   
 }
 
