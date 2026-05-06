@@ -1,0 +1,29 @@
+@InProceedings{10.1007/978-3-032-21289-4_18,
+author="Dassen, Maxime
+and Kotula, Rebecca
+and Murray, Kenton
+and Yates, Andrew
+and Lawrie, Dawn
+and Kayi, Efsun
+and Mayfield, James
+and Duh, Kevin",
+editor="Campos, Ricardo
+and Jatowt, Adam
+and Lan, Yanyan
+and Aliannejadi, Mohammad
+and Bauer, Christine
+and MacAvaney, Sean
+and Anand, Avishek
+and Ren, Zhaochun
+and Verberne, Suzan
+and Bai, Nan
+and Mansoury, Masoud",
+title="FACTUM: Mechanistic Detection of Citation Hallucination in Long-Form RAG",
+booktitle="Advances in Information Retrieval",
+year="2026",
+publisher="Springer Nature Switzerland",
+address="Cham",
+pages="272--288",
+abstract="Retrieval-Augmented Generation (RAG) models are critically undermined by citation hallucinations, a deceptive failure where a model cites a source that fails to support its claim. While existing work attributes hallucination to a simple over-reliance on parametric knowledge, we reframe this failure as an evolving, scale-dependent coordination failure between the Attention (reading) and Feed-Forward Network (recalling) pathways. We introduce FACTUM (Framework for Attesting Citation Trustworthiness via Underlying Mechanisms), a framework of four mechanistic scores: Contextual Alignment (CAS), Attention Sink Usage (BAS), Parametric Force (PFS), and Pathway Alignment (PAS). Our analysis reveals that correct citations are consistently marked by higher parametric force (PFS) and greater use of the attention sink (BAS) for information synthesis. Crucially, we find that ``one-size-fits-all'' theories are insufficient as the signature of correctness evolves with scale: while the 3B model relies on high pathway alignment (PAS), our best-performing 8B detector identifies a shift toward a specialized strategy where pathways provide distinct, orthogonal information. By capturing this complex interplay, FACTUM outperforms state-of-the-art baselines by up to 37.5{\%} in AUC. Our results demonstrate that high parametric force is constructive when successfully coordinated with the Attention pathway, paving the way for more nuanced and reliable RAG systems.",
+isbn="978-3-032-21289-4"
+}

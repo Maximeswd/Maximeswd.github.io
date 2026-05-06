@@ -234,12 +234,40 @@ span.highlight {
   vertical-align: middle;
   margin: 0 10px;         
   opacity: 0.55;            
-  transition: opacity 0.3s ease; 
+  transition: opacity 0.3s ease, transform 0.3s ease, filter 0.3s ease; 
   filter: grayscale(100%); 
 }
 
 .social-icon:hover {
   opacity: 1.0;            
   filter: grayscale(0%);   
+  transform: scale(1.15);
 }
 
+
+/* Selected research card — wraps in a div so transform actually works */
+.pub-card {
+    display: block;
+    margin: 8px 0;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #d0d7de;
+    transition: transform 0.25s ease-in-out, box-shadow 0.25s ease-in-out, border-color 0.25s ease-in-out;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    cursor: default;
+}
+
+.pub-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.10);
+    border-color: #b0b8c0;
+}
+
+/* Highlighted (blue-background) variant */
+.pub-card.highlighted {
+    border-color: #a8cceb;
+}
+
+.pub-card.highlighted:hover {
+    border-color: #6ba9d4;
+}

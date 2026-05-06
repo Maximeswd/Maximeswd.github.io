@@ -23,14 +23,14 @@
                   Maxime Dassen
                 </p>
                 <p>
-                  Hi, I'm Maxime (she/her). I am a PhD student in Artificial Intelligence at the <a href="https://irlab.science.uva.nl/">IRLab</a> of the University of Amsterdam, advised by <a href="https://andrewyates.net/">Andrew Yates</a> and <a href="https://staff.fnwi.uva.nl/e.kanoulas/">Evangelos Kanoulas</a>. My research focuses on <strong>AI safety</strong> and <strong>Mechanistic Interpretability</strong> for Language Models and Retrieval-Augmented Generation systems.
+                  Hi, I'm Maxime (she/her). I am a PhD student in Artificial Intelligence at the <a href="https://irlab.science.uva.nl/">IRLab</a> of the University of Amsterdam, advised by <a href="https://andrewyates.net/">Andrew Yates</a> and <a href="https://staff.fnwi.uva.nl/e.kanoulas/">Evangelos Kanoulas</a>. My research focuses on how language and vision-language models reason over external evidence; when they trust it, when they should not, and what their internal computation tells us about that difference. I work across <strong>retrieval-augmented systems</strong>, <strong>multimodal grounding</strong>, and <strong>trustworthy AI</strong>.
                 </p>
                 <p>
-                  In 2025 I was a research visitor at the <a href="https://hltcoe.jhu.edu/">Johns Hopkins University HLTCOE</a> as part of the <a href="https://hltcoe.jhu.edu/research/scale/scale-2025/">SCALE</a> program, and will return for <a href="https://hltcoe.jhu.edu/research/scale/scale-2026/">SCALE 2026</a> to work on multimodal RAG.
+                  In 2025 I was a Visiting PhD Student at the <a href="https://hltcoe.jhu.edu/">Johns Hopkins University HLTCOE</a> as part of the <a href="https://hltcoe.jhu.edu/research/scale/scale-2025/">SCALE</a> program, and will return for <a href="https://hltcoe.jhu.edu/research/scale/scale-2026/">SCALE 2026</a> to work on multimodal RAG.
                 </p>
                 <h2>How do AI systems coordinate what they observe with what they know?</h2>
                 <p>
-                  Modern language models carry extensive parametric knowledge from pre-training, but when we ask them to use external evidence, as in retrieval-augmented generation, we force two sources of information into the same output. My research investigates what happens mechanistically when this coordination succeeds or fails, and what that tells us about <strong>hallucination</strong>, <strong>knowledge conflicts</strong>, <strong>retrieval sycophancy</strong>, and <strong>grounding in multimodal systems</strong>. I am particularly interested in bridging internal model mechanisms with human-centric outcomes to build accessible and trustworthy AI. 
+                  Modern AI systems carry extensive knowledge from pre-training, but when we ask them to use external evidence: retrieved passages, images, or other context, and we force two sources of information into the same output. My research investigates what happens when this coordination succeeds or fails, and what that tells us about <strong>hallucination</strong>, <strong>knowledge conflicts</strong>, and <strong>grounding in multimodal systems</strong>. I am particularly interested in bridging model behaviour with human-centric outcomes to build accessible and trustworthy AI.
                 </p>
                 <p style="font-style:italic; color:#555;">
                   Ultimately, I am convinced that understanding the internal mechanisms behind the failures and successes of AI systems holds the key to making them more trustworthy, interpretable, and aligned with human needs.
@@ -73,7 +73,7 @@
               <td style="padding:16px;width:100%;vertical-align:middle">
                 <h2>Selected Research</h2>
                 <p>
-                  I'm interested in machine learning, deep learning, generative AI, natural language processing, and information retrieval. 
+                  I'm interested in machine learning, deep learning, generative AI, and multimodal learning. 
                   Some papers are <span class="highlight-blue">highlighted</span>. 
                 </p>
               </td>
@@ -82,16 +82,47 @@
           <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
 
-    <tr onmouseout="radmesh_stop()" onmouseover="radmesh_start()" bgcolor="#e6f3ff">
-      <td style="padding:16px;width:20%;vertical-align:top"> <!-- Changed to vertical-align:top -->
-        
-        <!-- THE BLUE BLOCK -->
-        <a href="https://ecir2026.eu/" class="pub-badge">ECIR '2026</a>
-        <div class="one">
-          <div class="two" id='radmesh_image'>
-            <img src='images/flowchart.png' width=100%>
-          </div>
-          <img src='images/flowchart.png' width=100%>
+        <tr>
+      <td colspan="2" style="padding:0;">
+        <div class="pub-card highlighted" onmouseout="radmesh_stop()" onmouseover="radmesh_start()">
+          <table style="width:100%;border:0;border-spacing:0;border-collapse:separate;background-color:#e6f3ff;border-radius:8px;">
+            <tbody>
+              <tr>
+                <td style="padding:16px;width:20%;vertical-align:top">
+                  <a href="https://ecir2026.eu/" class="pub-badge">ECIR '2026</a>
+                  <div class="one">
+                    <div class="two" id='radmesh_image'>
+                      <img src='images/flowchart.png' width=100%>
+                    </div>
+                    <img src='images/flowchart.png' width=100%>
+                  </div>
+                </td>
+                <td style="padding:8px;width:80%;vertical-align:middle">
+                  <a href="https://arxiv.org/abs/2601.05866">
+                    <span class="papertitle">FACTUM: Mechanistic Detection of Citation Hallucination in Long-Form RAG</span>
+                  </a>
+                  <br>
+                  <strong>Maxime Dassen</strong>,
+                  <a href="https://www.linkedin.com/in/rebecca-k-87052a131/">Rebecca Kotula</a>,
+                  <a href="https://kentonmurray.com/index.html">Kenton Murray</a>,
+                  <a href="https://andrewyates.net/">Andrew Yates</a>, <br>
+                  <a href="https://hltcoe.jhu.edu/researcher/dawn-lawrie/">Dawn Lawrie</a>,
+                  <a href="https://jacobsschool.ucsd.edu/faculty/profile?id=253">Efsun Kayi</a>,
+                  <a href="https://www.jhuapl.edu/about/people/james-mayfield">James Mayfield</a>,
+                  <a href="https://www.cs.jhu.edu/~kevinduh/">Kevin Duh</a>
+                  <br>
+                  <em>European Conference on Information Retrieval (ECIR)</em>, 2026
+                  <br>
+                  <a href="https://arxiv.org/abs/2601.05866" class="paper-btn">arXiv</a>
+                  <a href="https://github.com/Maximeswd/citation-hallucination/" class="paper-btn">code</a>
+                  <p></p>
+                  <p>
+                    We introduce FACTUM, a mechanistic framework that detects citation hallucinations in long-form RAG by identifying scale-dependent signatures in transformer pathways, outperforming state-of-the-art baselines by up to 37.5%.
+                  </p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
         <script type="text/javascript">
           function radmesh_start() {
@@ -103,30 +134,7 @@
           radmesh_stop()
         </script>
       </td>
-      <td style="padding:8px;width:80%;vertical-align:middle">
-        <a href="https://arxiv.org/abs/2601.05866">
-          <span class="papertitle">FACTUM: Mechanistic Detection of Citation Hallucination in Long-Form RAG</span>
-        </a>
-        <br>
-        <strong>Maxime Dassen</strong>, <!-- Added comma here -->
-        <a href="https://www.linkedin.com/in/rebecca-k-87052a131/">Rebecca Kotula</a>,
-        <a href="https://kentonmurray.com/index.html">Kenton Murray</a>,
-        <a href="https://andrewyates.net/">Andrew Yates</a>, <br>
-        <a href="https://hltcoe.jhu.edu/researcher/dawn-lawrie/">Dawn Lawrie</a>, 
-        <a href="https://jacobsschool.ucsd.edu/faculty/profile?id=253">Efsun Kayi</a>,
-        <a href="https://www.jhuapl.edu/about/people/james-mayfield">James Mayfield</a>,
-        <a href="https://www.cs.jhu.edu/~kevinduh/">Kevin Duh</a>
-        <br>
-        <em>European Conference on Information Retrieval (ECIR)</em>, 2026 <!-- Updated from arXiv to ECIR -->
-        <br>
-        <a href="https://arxiv.org/abs/2601.05866" class="paper-btn">arXiv</a>
-        <a href="https://github.com/Maximeswd/citation-hallucination/" class="paper-btn">code</a>
-        <p></p>
-        <p>
-          We introduce FACTUM, a mechanistic framework that detects citation hallucinations in long-form RAG by identifying scale-dependent signatures in transformer pathways, outperforming state-of-the-art baselines by up to 37.5%.
-        </p>
-      </td>
-    </tr>   
+    </tr>
     <!-- <tr onmouseout="cat4d_stop()" onmouseover="cat4d_start()" bgcolor="#ffffd0">
       <td style="padding:16px;width:20%;vertical-align:middle">
         <div class="one">
