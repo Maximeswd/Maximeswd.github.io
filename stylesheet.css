@@ -271,3 +271,207 @@ span.highlight {
 .pub-card.highlighted:hover {
     border-color: #6ba9d4;
 }
+
+
+
+
+
+
+
+/* ============================================
+   Fun-fact octopus button + popup
+   ============================================ */
+
+.ff-trigger {
+  position: relative;
+  border: none;
+  border-radius: 999px;
+  padding: 9px 18px;
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #555;
+  cursor: pointer;
+  overflow: hidden;
+  background: #eeeeee;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.10);
+  transition: transform 0.22s ease, box-shadow 0.22s ease, color 0.22s ease, background 0.22s ease;
+}
+
+.ff-trigger:hover {
+  color: white;
+  background: linear-gradient(
+    90deg,
+    #ff5f6d,
+    #ffc371,
+    #47e891,
+    #4facfe,
+    #c471f5,
+    #ff5f6d
+  );
+  background-size: 300% 100%;
+  animation: ff-rainbow-wave 1.4s linear infinite;
+  transform: translateY(-2px) scale(1.12);
+  box-shadow: 0 8px 22px rgba(120, 80, 200, 0.28);
+}
+
+/* After click: button becomes cephalopod-purple */
+.ff-trigger.is-active {
+  color: #6e44ff;
+  background: #f4efff;
+  border: 1px solid #6e44ff;
+  transform: translateY(-2px) scale(1.08);
+  box-shadow: 0 8px 22px rgba(110, 68, 255, 0.22);
+}
+
+@keyframes ff-rainbow-wave {
+  from { background-position: 0% 50%; }
+  to   { background-position: 300% 50%; }
+}
+
+.ff-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: transparent;
+}
+
+.ff-overlay[hidden] {
+  display: none;
+}
+
+.ff-bubble {
+  position: absolute;
+  width: min(360px, calc(100vw - 32px));
+  max-width: calc(100vw - 32px);
+  transform: translateX(-50%);
+  animation: ff-genie-in 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.ff-octopus {
+  font-size: 42px;
+  text-align: center;
+  margin-bottom: -4px;
+  animation: ff-octopus-pop 0.6s ease forwards;
+}
+
+/* Popup stays clean: white box, gray line, shadow */
+.ff-box {
+  background: #fff;
+  border: 1px solid #8f98a3;
+  border-radius: 16px;
+  padding: 16px 18px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+  position: relative;
+  box-sizing: border-box;
+}
+
+.ff-box::before {
+  content: "";
+  position: absolute;
+  top: -9px;
+  left: 50%;
+  width: 18px;
+  height: 18px;
+  background: #fff;
+  border-left: 1px solid #8f98a3;
+  border-top: 1px solid #8f98a3;
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.ff-topic {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: #6e44ff;
+  margin-bottom: 8px;
+}
+
+.ff-text {
+  margin: 0;
+  line-height: 1.42;
+  color: #333;
+  font-size: 13px;
+}
+
+.ff-text a {
+  font-size: 13px;
+  font-weight: 400;
+  color: #0b4f8a;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.ff-text a:hover {
+  color: #4facfe;
+  text-decoration: underline;
+}
+
+.rainbow-word {
+  font-weight: 700;
+}
+
+
+.rainbow-word.r1 { color: #ec2b48; } /* red */
+.rainbow-word.r2 { color: #f49830; } /* orange */
+.rainbow-word.r3 { color: #deca14; } /* darker yellow */
+.rainbow-word.r4 { color: #1cd244; } /* darker green */
+.rainbow-word.r5 { color: #2e8ce3; } /* blue */
+.rainbow-word.r6 { color: #6e44ff; } /* indigo */
+.rainbow-word.r7 { color: #c83ddb; } /* violet */
+
+.ff-another {
+  margin-top: 12px;
+  border: none;
+  background: transparent;
+  color: #1772d0;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0;
+}
+
+.ff-another:hover {
+  color: #c744ff;
+}
+
+@keyframes ff-genie-in {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-8px) scale(0.2) rotate(-5deg);
+    filter: blur(8px);
+  }
+  70% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(4px) scale(1.04) rotate(1deg);
+    filter: blur(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0) scale(1) rotate(0);
+  }
+}
+
+@keyframes ff-octopus-pop {
+  0% {
+    transform: translateY(16px) scale(0.4);
+    opacity: 0;
+  }
+  70% {
+    transform: translateY(-4px) scale(1.12);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ff-trigger:hover,
+  .ff-bubble,
+  .ff-octopus {
+    animation: none;
+  }
+}

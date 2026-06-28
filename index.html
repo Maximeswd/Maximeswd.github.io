@@ -26,18 +26,22 @@
                   Hi, I'm Maxime (she/her). I am a PhD student in Artificial Intelligence/Computer Science at the <a href="https://irlab.science.uva.nl/">IRLab</a> of the University of Amsterdam, where I am fortunate to be advised by <a href="https://hltcoe.jhu.edu/researcher/andrew-yates/">Andrew Yates</a> and <a href="https://staff.fnwi.uva.nl/e.kanoulas/">Evangelos Kanoulas</a>. 
                   <!-- Hi, I'm Maxime (she/her). I am a PhD student in Artificial Intelligence at the <a href="https://irlab.science.uva.nl/">IRLab</a> of the University of Amsterdam, advised by <a href="https://hltcoe.jhu.edu/researcher/andrew-yates/">Andrew Yates</a> and <a href="https://staff.fnwi.uva.nl/e.kanoulas/">Evangelos Kanoulas</a>. I'm interested in how language and vision-language models coordinate what they observe with what they know; when they trust external evidence, when they shouldn't, and what their internal computation tells us about the difference. My work sits across <strong>retrieval-augmented systems</strong>, <strong>multimodal grounding</strong>, and <strong>trustworthy AI</strong>, with the goal of building models people can actually rely on.  -->
                 </p>
-                <p>
-                  I'm interested in understanding the behaviors of Large Language Models (LLMs) and Multimodal Models (VLMs & Omnimodal models), and making them more controllable, interpretable, and efficient. Specifically, my research focuses on <strong>post-post-training</strong> utilizing alignment, interpretability, and inference-time interventions to understand <em>why</em> these models behave the way they do. 
+                My research aims to understand how <strong>foundation models</strong> acquire, represent, and manipulate information across modalities, and how that understanding can be utilized to build AI systems that are more <strong>reliable</strong>, <strong>interpretable</strong>, <strong>controllable</strong>, and <strong>efficient</strong>.
                 </p>
+                <!-- <p>
+                  To study these questions, I work on alignment, inference-time interventions, mechanistic interpretability, and training and probing embedding models to understand what representations can and cannot encode.
+                </p> -->
                 <p>
                   In 2025 I was a Visiting PhD Student at the <a href="https://hltcoe.jhu.edu/">Johns Hopkins University HLTCOE</a> as part of the <a href="https://hltcoe.jhu.edu/research/scale/scale-2025/">SCALE 2025</a> program, and will return for <a href="https://hltcoe.jhu.edu/research/scale/scale-2026/">SCALE 2026</a> to work on multimodal RAG.
                 </p>
                 <p style="font-style:italic; color:#5c5f63;">
-                Ultimately, I believe that uncovering these internal mechanisms holds the key to building models that are truly robust and reliable.
+                Ultimately, I believe that understanding these internal mechanisms is essential for building AI systems that people can genuinely trust.
                 </p>
                 <p style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 0.85em; color: #777; margin-bottom: 20px;">
                   Last updated at May 1st 2026
                 </p>
+                
+
                 <!-- <h2>How do AI systems coordinate what they observe with what they know?</h2>
                 <p>
                   Modern AI systems carry extensive knowledge from pre-training, but when we ask them to use external evidence: retrieved passages, images, or other context, and we force two sources of information into the same output. My research investigates what happens when this coordination succeeds or fails, and what that tells us about <strong>hallucination</strong>, <strong>knowledge conflicts</strong>, and <strong>grounding in multimodal systems</strong>. I am particularly interested in bridging model behaviour with human-centric outcomes to build accessible and trustworthy AI.
@@ -73,9 +77,124 @@
               </td>
               <td style="padding:2.5%;width:37%;max-width:37%">
                 <a href="images/pf.jpg"><img style="width:100%;max-width:100%;object-fit: cover; border-radius: 50%;" alt="profile photo" src="images/pf.jpg" class="hoverZoomLink"></a>
-              </td>
+      
+
+              <div style="text-align: center; margin-top: 16px;">
+                <button id="ff-trigger" class="ff-trigger" type="button" aria-haspopup="dialog">
+                  fun fact?
+                </button>
+              </div>
+            </td>
             </tr>
-          
+            </tbody></table>
+
+            <div id="ff-overlay" class="ff-overlay" hidden>
+              <div id="ff-bubble" class="ff-bubble" role="dialog" aria-modal="true">
+                <div class="ff-octopus" aria-hidden="true">🐙</div>
+                <div class="ff-box">
+                  <span id="ff-topic" class="ff-topic"></span>
+                  <p id="ff-text" class="ff-text"></p>
+                  <button id="ff-another" class="ff-another" type="button">another &rarr;</button>
+                </div>
+              </div>
+            </div>
+
+            <script>
+            (function () {
+              var FACTS = [
+                {
+                  topic: "Cephalopods",
+                  text: `The octopus, one of my favorite animals, has around <span class="rainbow-word r1">500 million neurons</span> 
+                        (humans: ~86 billion), with about <span class="rainbow-word r2">two-thirds</span> of them living in its arms rather than its head. 
+                        Each arm can taste, grip, and react partly on its own. Cephalopods also have remarkable reflector cells, such as 
+                        <span class="rainbow-word r3">iridophores</span> and <span class="rainbow-word r4">leucophores</span>, 
+                        that help them produce shimmering colors and camouflage. Because cephalopod intelligence evolved independently from ours for over 
+                        <span class="rainbow-word r5">500 million years</span>, they may be the closest thing to an 
+                        <span class="rainbow-word r7">alien mind on Earth</span>. If you want to know more about them, I highly recommend this 
+                        <a href="https://en.wikipedia.org/wiki/Other_Minds:_The_Octopus,_the_Sea,_and_the_Deep_Origins_of_Consciousness" target="_blank" rel="noopener noreferrer">book</a>.`
+                },
+              ];
+
+              var trigger = document.getElementById("ff-trigger");
+              var overlay = document.getElementById("ff-overlay");
+              var bubble = document.getElementById("ff-bubble");
+              var anotherBtn = document.getElementById("ff-another");
+              var topicEl = document.getElementById("ff-topic");
+              var textEl = document.getElementById("ff-text");
+              var idx = 0;
+
+              function render() {
+                topicEl.textContent = FACTS[idx].topic;
+                textEl.innerHTML = FACTS[idx].text;
+                anotherBtn.style.display = FACTS.length > 1 ? "inline-block" : "none";
+              }
+
+              function position() {
+                var r = trigger.getBoundingClientRect();
+
+                bubble.style.top = (r.bottom + 12) + "px";
+                bubble.style.left = (r.left + r.width / 2) + "px";
+
+                var bubbleRect = bubble.getBoundingClientRect();
+                var padding = 16;
+
+                if (bubbleRect.left < padding) {
+                  bubble.style.left = padding + bubbleRect.width / 2 + "px";
+                }
+
+                if (bubbleRect.right > window.innerWidth - padding) {
+                  bubble.style.left = window.innerWidth - padding - bubbleRect.width / 2 + "px";
+                }
+              }
+
+              function openFact() {
+                idx = 0;
+                render();
+
+                overlay.hidden = false;
+                trigger.classList.add("is-active");
+
+                position();
+
+                bubble.style.animation = "none";
+                void bubble.offsetWidth;
+                bubble.style.animation = "";
+              }
+
+              function closeFact() {
+                overlay.hidden = true;
+                trigger.classList.remove("is-active");
+              }
+
+              trigger.addEventListener("click", function (e) {
+                e.stopPropagation();
+                openFact();
+              });
+
+              anotherBtn.addEventListener("click", function (e) {
+                e.stopPropagation();
+                idx = (idx + 1) % FACTS.length;
+                render();
+              });
+
+              overlay.addEventListener("click", function (e) {
+                if (!bubble.contains(e.target)) closeFact();
+              });
+
+              bubble.addEventListener("mouseleave", closeFact);
+
+              document.addEventListener("keydown", function (e) {
+                if (e.key === "Escape" && !overlay.hidden) closeFact();
+              });
+
+              window.addEventListener("resize", function () {
+                if (!overlay.hidden) position();
+              });
+            })();
+            </script>
+              </td>
+
+            </tr>
     
           </tbody></table>
           <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
@@ -443,6 +562,8 @@
 
           <!-- </tbody>
         </table>  -->
+
+
 
          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
           <tbody>
