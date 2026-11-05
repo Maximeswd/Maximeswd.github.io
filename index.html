@@ -23,22 +23,16 @@
                   Maxime Dassen
                 </p>
                 <p>
-                  Hi, I'm Maxime (she/her). I am a PhD student in Artificial Intelligence/Computer Science at the <a href="https://irlab.science.uva.nl/">IRLab</a> of the University of Amsterdam, where I am fortunate to be advised by <a href="https://hltcoe.jhu.edu/researcher/andrew-yates/">Andrew Yates</a>. <!-- and <a href="https://staff.fnwi.uva.nl/e.kanoulas/">Evangelos Kanoulas</a>. -->
-                  <!-- Hi, I'm Maxime (she/her). I am a PhD student in Artificial Intelligence at the <a href="https://irlab.science.uva.nl/">IRLab</a> of the University of Amsterdam, advised by <a href="https://hltcoe.jhu.edu/researcher/andrew-yates/">Andrew Yates</a> and <a href="https://staff.fnwi.uva.nl/e.kanoulas/">Evangelos Kanoulas</a>. I'm interested in how language and vision-language models coordinate what they observe with what they know; when they trust external evidence, when they shouldn't, and what their internal computation tells us about the difference. My work sits across <strong>retrieval-augmented systems</strong>, <strong>multimodal grounding</strong>, and <strong>trustworthy AI</strong>, with the goal of building models people can actually rely on.  -->
+                  Hi, I'm Maxime (she/her). I am a PhD student at the <a href="https://irlab.science.uva.nl/">IRLab</a> of the University of Amsterdam, advised by <a href="https://andrewyates.net/">Andrew Yates</a>, where I work on <strong>foundation models</strong> and how they acquire, represent, and use information across modalities.
                 </p>
-                My research aims to understand how <strong>foundation models</strong> acquire, represent, and manipulate information across modalities, and how that understanding can be utilized to build AI systems that are more <strong>reliable</strong>, <strong>interpretable</strong>, <strong>controllable</strong>, and <strong>efficient</strong>.
-                </p>
-                <!-- <p>
-                  To study these questions, I work on alignment, inference-time interventions, mechanistic interpretability, and training and probing embedding models to understand what representations can and cannot encode.
-                </p> -->
                 <p>
-                  In 2025 I was a Visiting PhD Student at the <a href="https://hltcoe.jhu.edu/">Johns Hopkins University HLTCOE</a> as part of the <a href="https://hltcoe.jhu.edu/research/scale/scale-2025/">SCALE 2025</a> program, and will return for <a href="https://hltcoe.jhu.edu/research/scale/scale-2026/">SCALE 2026</a> to work on multimodal grounding.
+                  I was a visiting student at the <a href="https://hltcoe.jhu.edu/">Johns Hopkins University HLTCOE</a> as part of the <a href="https://hltcoe.jhu.edu/research/scale/scale-2025/">SCALE 2025</a> program, where I worked on hallucination detection of LLM citations, and the <a href="https://hltcoe.jhu.edu/research/scale/scale-2026/">SCALE 2026</a> program, where I worked on multimodal grounding.
                 </p>
-                <p style="font-style:italic; color:#5c5f63;">
+                <!-- <p style="font-style:italic; color:#5c5f63;">
                 Ultimately, I believe that understanding these internal mechanisms is essential for building AI systems that people can genuinely trust.
-                </p>
+                </p> -->
                 <p style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 0.85em; color: #777; margin-bottom: 20px;">
-                  Last updated at May 1st 2026
+                  Last updated at November 5th 2026
                 </p>
                 
 
@@ -213,6 +207,56 @@
 
         <tr>
       <td colspan="2" style="padding:0;">
+        <div class="pub-card highlighted" onmouseout="gor_stop()" onmouseover="gor_start()">
+          <table style="width:100%;border:0;border-spacing:0;border-collapse:separate;background-color:#e6f3ff;border-radius:8px;">
+            <tbody>
+              <tr>
+                <td style="padding:16px;width:20%;vertical-align:top">
+                  <a href="https://arxiv.org/abs/2610.33841" class="pub-badge">Preprint</a>
+                  <div class="one">
+                    <div class="two" id='gor_image'>
+                      <img src='images/gor.png' width=100%>
+                    </div>
+                    <img src='images/gor.png' width=100%>
+                  </div>
+                </td>
+                <td style="padding:8px;width:80%;vertical-align:middle">
+                  <a href="https://arxiv.org/abs/2610.33841">
+                    <span class="papertitle">Grounding on Request: Learning Modality Control in Vision-Language Models</span>
+                  </a>
+                  <br>
+                  <strong>Maxime Dassen</strong>,
+                  <a href="https://alexmartin1722.github.io/">Alexander Martin</a>,
+                  <a href="https://andrewyates.net/">Andrew Yates</a>,
+                  <a href="https://rekriz11.github.io/">Reno Kriz</a>,
+                  <a href="https://wgantt.github.io/personal-website/">William Walden</a>
+                  <br>
+                  <em>arXiv preprint</em>, 2026
+                  <br>
+                  <a href="https://arxiv.org/abs/2610.33841" class="paper-btn">arXiv</a>
+                  <a href="https://github.com/Maximeswd/Grounding-on-Request" class="paper-btn">code</a>
+                  <p></p>
+                  <p>
+                    We introduce different methods to control which modality a vision-language model grounds its answer in when an image and its text disagree.
+                  </p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <script type="text/javascript">
+          function gor_start() {
+            document.getElementById('gor_image').style.opacity = "1";
+          }
+          function gor_stop() {
+            document.getElementById('gor_image').style.opacity = "0";
+          }
+          gor_stop()
+        </script>
+      </td>
+    </tr>
+        <tr>
+      <td colspan="2" style="padding:0;">
         <div class="pub-card highlighted" onmouseout="radmesh_stop()" onmouseover="radmesh_start()">
           <table style="width:100%;border:0;border-spacing:0;border-collapse:separate;background-color:#e6f3ff;border-radius:8px;">
             <tbody>
@@ -234,7 +278,7 @@
                   <strong>Maxime Dassen</strong>,
                   <a href="https://www.linkedin.com/in/rebecca-k-87052a131/">Rebecca Kotula</a>,
                   <a href="https://kentonmurray.com/index.html">Kenton Murray</a>,
-                  <a href="https://hltcoe.jhu.edu/researcher/andrew-yates/">Andrew Yates</a>, <br>
+                  <a href="https://andrewyates.net/">Andrew Yates</a>, <br>
                   <a href="https://hltcoe.jhu.edu/researcher/dawn-lawrie/">Dawn Lawrie</a>,
                   <a href="https://jacobsschool.ucsd.edu/faculty/profile?id=253">Efsun Kayi</a>,
                   <a href="https://www.jhuapl.edu/about/people/james-mayfield">James Mayfield</a>,
